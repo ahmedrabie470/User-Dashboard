@@ -1,0 +1,7 @@
+<div class="user-list">
+  <mat-progress-bar *ngIf="loading$ | async" mode="indeterminate"></mat-progress-bar>
+  <div *ngFor="let user of users$ | async" class="user-item">
+    <app-user-card [user]="user"></app-user-card>
+  </div>
+  <mat-paginator (page)="onPageChange($event)"></mat-paginator>
+</div>

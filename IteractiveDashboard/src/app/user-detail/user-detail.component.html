@@ -1,0 +1,10 @@
+<div *ngIf="loading$ | async" class="loading-bar">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+<div *ngIf="user$ | async as user" class="user-detail">
+  <button (click)="goBack()">Back</button>
+  <div>
+    <img [src]="user.avatar" alt="Avatar">
+    <p>{{ user.first_name }} {{ user.last_name }}</p>
+  </div>
+</div>
